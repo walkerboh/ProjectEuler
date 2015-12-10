@@ -16,7 +16,7 @@ namespace ProjectEuler
             Console.WriteLine("Please select the problem you would like to run by problem number.\n");
             Console.WriteLine("Available Problems:");
             string @namespace = "ProjectEuler.Problems";
-            List<string> classes = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Namespace != null && t.Namespace.Equals(@namespace) && t.IsClass).Select(t => t.Name).ToList();
+            List<string> classes = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Namespace != null && t.Namespace.Equals(@namespace) && t.IsClass && t.Name.StartsWith("Problem")).Select(t => t.Name).ToList();
             classes.ForEach(c => Console.WriteLine(c));
 
             string problemNumber = "Problem" + Console.ReadLine();
