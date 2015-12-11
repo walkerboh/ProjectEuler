@@ -17,7 +17,7 @@ namespace ProjectEuler.Problems
             string[] lines;
 
             // Read in the file, this will only work if you are running from within VS or haven't changed the file structure after building. Sorry
-            using (StreamReader reader = new StreamReader(Assembly.GetExecutingAssembly().Location.Replace(@"\bin\Debug\ProjectEuler.exe", @"\Artifacts\triangle.txt")))
+            using (StreamReader reader = new StreamReader(Helper.GetArtifactFilePath("p067_triangle.txt")))
             {
                 // Read the whole file and split it into lines
                 lines = reader.ReadToEnd().Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);

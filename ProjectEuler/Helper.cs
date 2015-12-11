@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,12 @@ namespace ProjectEuler
 {
     static class Helper
     {
+        // Helper to get an artifact file
+        public static string GetArtifactFilePath(string fileName)
+        {
+            return Assembly.GetExecutingAssembly().Location.Replace(@"\bin\Debug\ProjectEuler.exe", @"\Artifacts\" + fileName);
+        }
+
         // Simple prime checking algorithm alla the pseudocode found on https://en.wikipedia.org/wiki/Primality_test
         public static bool IsPrime(long number)
         {
