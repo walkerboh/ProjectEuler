@@ -18,6 +18,9 @@ namespace ProjectEuler
         // Simple prime checking algorithm alla the pseudocode found on https://en.wikipedia.org/wiki/Primality_test
         public static bool IsPrime(long number)
         {
+            if (number < 0)
+                return false;
+
             // Don't need to check over the square root as then we would be checking numbers for which we have already checked their pair
             long max = Convert.ToInt64(Math.Ceiling(Math.Sqrt(number)));
 
