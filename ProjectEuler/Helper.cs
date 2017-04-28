@@ -47,5 +47,19 @@ namespace ProjectEuler
         {
             return b == 0 ? a : GCD(b, a % b);
         }
+
+        public static int Factorial(int a)
+        {
+            if (a <= 1)
+                return 1;
+
+            return a * Factorial(a - 1);
+        }
+
+        // Because why not
+        public static int Fac(this int a)
+        {
+            return Factorial(a);
+        }
     }
 }
