@@ -61,5 +61,21 @@ namespace ProjectEuler
         {
             return Factorial(a);
         }
+
+        // Basic permutation. fixedChar are the characters already permuted and chars are the available ones
+        public static IEnumerable<string> GetPermutations(string fixedChar, string chars)
+        {
+            List<string> ret = new List<string>();
+
+            // If only one character left, just take it on the end
+            if (chars.Length == 1)
+                ret.Add(fixedChar + chars);
+
+            // Loop through all the available characters and find all the permutations with the remaining characters
+            for (int i = 0; i < chars.Length; i++)
+                ret.AddRange(GetPermutations(fixedChar + chars[i], chars.Substring(0, i) + chars.Substring(i + 1, chars.Length - (i + 1))));
+
+            return ret;
+        }
     }
 }
