@@ -20,38 +20,13 @@ namespace ProjectEuler.Problems
                     int temp;
 
                     // If its a palindrome and greater than the current one we have then save it.
-                    if (IsPalindrome((temp = i * j)) && temp > palindrome)
+                    if (Helper.IsPalindrome((temp = i * j)) && temp > palindrome)
                         palindrome = temp;
                 }
             }
 
             Console.WriteLine("Problem 4: " + palindrome);
 
-        }
-
-        // Takes the number and does string manipulation to check from palindrome-ness (I like making up words)
-        private bool IsPalindrome(int number)
-        {
-            string numberString = Convert.ToString(number);
-            string firstHalf, secondHalf;
-
-            // If we have a number that has an odd number of characters I want to ignore the middle one so it has special logic
-            // Probably don't need the check but hey, completeness
-            if (numberString.Length % 2 == 0)
-            {
-                firstHalf = numberString.Substring(0, numberString.Length / 2);
-                secondHalf = numberString.Substring(numberString.Length / 2);
-            }
-            else
-            {
-                firstHalf = numberString.Substring(0, numberString.Length / 2);
-                secondHalf = numberString.Substring(numberString.Length / 2 + 1);
-            }
-
-            // Reverse the text in the second half and just return if it equals the first half, easy
-            secondHalf = new string(secondHalf.Reverse().ToArray());
-
-            return firstHalf.Equals(secondHalf);
         }
     }
 }

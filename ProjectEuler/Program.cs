@@ -30,6 +30,7 @@ namespace ProjectEuler
                 Console.WriteLine("Duration (in seconds): " + duration.TotalSeconds);
             }
 
+            Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
     }

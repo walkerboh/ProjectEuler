@@ -77,5 +77,33 @@ namespace ProjectEuler
 
             return ret;
         }
+
+        public static bool IsPalindrome(int input)
+        {
+            return IsPalindrome(input.ToString());
+        }
+
+        public static bool IsPalindrome(string input)
+        {
+            string firstHalf, secondHalf;
+
+            // If we have a number that has an odd number of characters I want to ignore the middle one so it has special logic
+            // Probably don't need the check but hey, completeness
+            if (input.Length % 2 == 0)
+            {
+                firstHalf = input.Substring(0, input.Length / 2);
+                secondHalf = input.Substring(input.Length / 2);
+            }
+            else
+            {
+                firstHalf = input.Substring(0, input.Length / 2);
+                secondHalf = input.Substring(input.Length / 2 + 1);
+            }
+
+            // Reverse the text in the second half and just return if it equals the first half, easy
+            secondHalf = new string(secondHalf.Reverse().ToArray());
+
+            return firstHalf.Equals(secondHalf);
+        }
     }
 }
