@@ -12,7 +12,7 @@ namespace ProjectEuler.Problems
         {
             int numSolutions = 0, max = 0;
 
-            // Lots of math happens here and honestly its too much to put here, but solve a^2 + b^2 = c^2 and a + b + c = p for b, that gets you the equation in the if
+            // Lots of math happens here and honestly its too much to put all the steps here, but solve a^2 + b^2 = c^2 and a + b + c = p for b, that gets you the equation in the if
             // Analyzing even/odd for a and b shows that the sum of a, b, and c is always even, thus only checking even p.
 
             for (int p = 2; p <= 1000; p += 2)
