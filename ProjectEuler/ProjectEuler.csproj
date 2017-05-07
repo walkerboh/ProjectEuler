@@ -83,6 +83,7 @@
     <Compile Include="Problems\Problem4.cs" />
     <Compile Include="Problems\Problem40.cs" />
     <Compile Include="Problems\Problem41.cs" />
+    <Compile Include="Problems\Problem42.cs" />
     <Compile Include="Problems\Problem5.cs" />
     <Compile Include="Problems\Problem6.cs" />
     <Compile Include="Problems\Problem67.cs" />
@@ -98,6 +99,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Artifacts\p022_names.txt" />
+    <Content Include="Artifacts\p042_words.txt" />
     <Content Include="Artifacts\p067_triangle.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
