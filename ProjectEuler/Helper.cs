@@ -9,6 +9,8 @@ namespace ProjectEuler
 {
     static class Helper
     {
+        private static readonly char[] digits = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
         // Helper to get an artifact file
         public static string GetArtifactFilePath(string fileName)
         {
@@ -104,6 +106,11 @@ namespace ProjectEuler
             secondHalf = new string(secondHalf.Reverse().ToArray());
 
             return firstHalf.Equals(secondHalf);
+        }
+
+        public static bool IsPandigital(string input)
+        {
+            return input.Length == 9 && digits.All(d => input.Contains(d)) ? true : false;
         }
     }
 }
