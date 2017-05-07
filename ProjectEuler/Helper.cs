@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -108,9 +109,46 @@ namespace ProjectEuler
             return firstHalf.Equals(secondHalf);
         }
 
-        public static bool IsPandigital(string input)
+        public static bool IsPandigital(string input, int length)
         {
-            return input.Length == 9 && digits.All(d => input.Contains(d)) ? true : false;
+            return input.Length == length && Enumerable.Range(1, length).All(d => input.Contains(d.ToString())) ? true : false;
+        }
+
+        /// <summary>
+        /// Method to generate primes using the Sieve of Eratoathenes
+        /// I stole this from http://www.mathblog.dk/sum-of-all-primes-below-2000000-problem-10/ and modified it to yield return
+        /// I got tired of always looping to generate primes so this works better if we know an upper limit
+        /// </summary>
+        /// <param name="upperLimit">Upper limit to find a prime</param>
+        /// <returns>List of prime numbers</returns>
+        public static IEnumerable<int> ESieve(int upperLimit)
+        {
+            int sieveBound = (int)(upperLimit - 1) / 2;
+            int upperSqrt = ((int)Math.Sqrt(upperLimit) - 1) / 2;
+
+            BitArray PrimeBits = new BitArray(sieveBound + 1, true);
+
+            for (int i = 1; i <= upperSqrt; i++)
+            {
+                if (PrimeBits.Get(i))
+                {
+                    for (int j = i * 2 * (i + 1); j <= sieveBound; j += 2 * i + 1)
+                    {
+                        PrimeBits.Set(j, false);
+                    }
+                }
+            }
+
+            List<int> numbers = new List<int>((int)(upperLimit / (Math.Log(upperLimit) - 1.08366)));
+            yield return 2;
+
+            for (int i = 1; i <= sieveBound; i++)
+            {
+                if (PrimeBits.Get(i))
+                {
+                    yield return (2 * i + 1);
+                }
+            }
         }
     }
 }

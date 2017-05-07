@@ -26,7 +26,7 @@ namespace ProjectEuler.Problems
                 if (numString.Length != 9)
                     continue;
 
-                if (Helper.IsPandigital(numString.ToString()))
+                if (Helper.IsPandigital(numString.ToString(), 9))
                 {
                     max = Math.Max(max, Convert.ToInt32(numString.ToString()));
                 }
