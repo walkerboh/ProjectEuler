@@ -65,6 +65,11 @@ namespace ProjectEuler
             return Factorial(a);
         }
 
+        public static IEnumerable<string> GetPermutations(string initialCharacters)
+        {
+            return GetPermutations(string.Empty, initialCharacters);
+        }
+
         // Basic permutation. fixedChar are the characters already permuted and chars are the available ones
         public static IEnumerable<string> GetPermutations(string fixedChar, string chars)
         {
@@ -109,9 +114,9 @@ namespace ProjectEuler
             return firstHalf.Equals(secondHalf);
         }
 
-        public static bool IsPandigital(string input, int length)
+        public static bool IsPandigital(string input, int length, bool includeZero = false)
         {
-            return input.Length == length && Enumerable.Range(1, length).All(d => input.Contains(d.ToString())) ? true : false;
+            return input.Length == length && Enumerable.Range(includeZero ? 0 : 1, length).All(d => input.Contains(d.ToString())) ? true : false;
         }
 
         /// <summary>
