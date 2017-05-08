@@ -160,5 +160,35 @@ namespace ProjectEuler
         {
             return n == Math.Floor(n);
         }
+
+        public static int GetTriangular(int n)
+        {
+            return n * (n + 1) / 2;
+        }
+
+        public static bool IsTriangular(long n)
+        {
+            return IsWholeNumber((Math.Sqrt((8 * n) + 1) + 1) / 2);
+        }
+
+        public static int GetPentagonal(int n)
+        {
+            return n * ((3 * n) - 1) / 2;
+        }
+
+        public static bool IsPentagonal(long n)
+        {
+            return IsWholeNumber((Math.Sqrt((24 * n) + 1) + 1) / 6);
+        }
+
+        public static int GetHexagonal(int n)
+        {
+            return n * ((2 * n) - 1);
+        }
+
+        public static bool IsHexagonal(long n)
+        {
+            return IsWholeNumber((Math.Sqrt((8 * n) + 1) + 1) / 4);
+        }
     }
 }

@@ -17,11 +17,11 @@ namespace ProjectEuler.Problems
 
             while (!solved)
             {
-                pentagonal.Add(GetPentagonal(n));
+                pentagonal.Add(Helper.GetPentagonal(n));
 
                 for (int i = 0; i < pentagonal.Count - 1; i++)
                 {
-                    if (IsPentagonal(pentagonal.ElementAt(n - 1) - pentagonal.ElementAt(i)) && IsPentagonal(pentagonal.ElementAt(n - 1) + pentagonal.ElementAt(i)))
+                    if (Helper.IsPentagonal(pentagonal.ElementAt(n - 1) - pentagonal.ElementAt(i)) && Helper.IsPentagonal(pentagonal.ElementAt(n - 1) + pentagonal.ElementAt(i)))
                     {
                         solved = true;
                         Console.WriteLine("Problem 44: " + Math.Abs(pentagonal.ElementAt(n - 1) - pentagonal.ElementAt(i)));
@@ -30,16 +30,6 @@ namespace ProjectEuler.Problems
 
                 n++;
             }
-        }
-
-        private int GetPentagonal(int n)
-        {
-            return n * ((3 * n) - 1) / 2;
-        }
-
-        private bool IsPentagonal(int n)
-        {
-            return pentagonal.Contains(n) || Helper.IsWholeNumber((Math.Sqrt((24 * n) + 1) + 1) / 6);
         }
     }
 }
