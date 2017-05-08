@@ -155,5 +155,10 @@ namespace ProjectEuler
                 }
             }
         }
+
+        public static bool IsWholeNumber(double n)
+        {
+            return n == Math.Floor(n);
+        }
     }
 }
