@@ -10,6 +10,9 @@ namespace ProjectEuler.Problems
     {
         protected override void ExecuteProblem()
         {
+            // Brute force but works fast enough
+            // Also C# math is dumb and in the calculation of the triangular numbers, a variable needs to be casted to long since I give it an int, otherwise multiplication overflows
+
             long newTriangular;
             int n = 286;
 

@@ -158,22 +158,22 @@ namespace ProjectEuler
 
         public static bool IsWholeNumber(double n)
         {
-            return n == Math.Floor(n);
+            return n == (long)n;
         }
 
-        public static int GetTriangular(int n)
+        public static long GetTriangular(int n)
         {
-            return n * (n + 1) / 2;
+            return (long)n * (n + 1) / 2;
         }
 
         public static bool IsTriangular(long n)
         {
-            return IsWholeNumber((Math.Sqrt((8 * n) + 1) + 1) / 2);
+            return IsWholeNumber((Math.Sqrt((8 * n) + 1) - 1) / 2);
         }
 
-        public static int GetPentagonal(int n)
+        public static long GetPentagonal(int n)
         {
-            return n * ((3 * n) - 1) / 2;
+            return (long)n * ((3 * n) - 1) / 2;
         }
 
         public static bool IsPentagonal(long n)
@@ -181,9 +181,9 @@ namespace ProjectEuler
             return IsWholeNumber((Math.Sqrt((24 * n) + 1) + 1) / 6);
         }
 
-        public static int GetHexagonal(int n)
+        public static long GetHexagonal(int n)
         {
-            return n * ((2 * n) - 1);
+            return (long)n * ((2 * n) - 1);
         }
 
         public static bool IsHexagonal(long n)

@@ -8,7 +8,7 @@ namespace ProjectEuler.Problems
 {
     class Problem44 : BaseProblem
     {
-        List<int> pentagonal = new List<int>() { 1 };
+        List<long> pentagonal = new List<long>() { 1 };
 
         protected override void ExecuteProblem()
         {
