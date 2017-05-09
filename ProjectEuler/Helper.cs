@@ -3,12 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler
 {
-    static class Helper
+    internal static class Helper
     {
         private static readonly char[] digits = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 

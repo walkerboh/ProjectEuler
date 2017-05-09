@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
-    class Problem32 : BaseProblem
+    internal class Problem32 : BaseProblem
     {
-        HashSet<int> products = new HashSet<int>();
-        char[] digits = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        private HashSet<int> products = new HashSet<int>();
+        private char[] digits = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
         protected override void ExecuteProblem()
         {

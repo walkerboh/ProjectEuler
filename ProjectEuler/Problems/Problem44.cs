@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
-    class Problem44 : BaseProblem
+    internal class Problem44 : BaseProblem
     {
-        List<long> pentagonal = new List<long>() { 1 };
+        private List<long> pentagonal = new List<long>() { 1 };
 
         protected override void ExecuteProblem()
         {

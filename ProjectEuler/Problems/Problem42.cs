@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
-    class Problem42 : BaseProblem
+    internal class Problem42 : BaseProblem
     {
         protected override void ExecuteProblem()
         {

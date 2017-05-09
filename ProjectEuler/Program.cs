@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-using ProjectEuler.Problems;
 
 namespace ProjectEuler
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Please select the problem you would like to run by problem number.\n");
             Console.WriteLine("Available Problems:");

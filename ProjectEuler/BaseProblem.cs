@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler
 {
-    class BaseProblem
+    internal class BaseProblem
     {
         public TimeSpan Run()
         {
@@ -18,7 +14,7 @@ namespace ProjectEuler
             return stopwatch.Elapsed;
         }
 
-        virtual protected void ExecuteProblem()
+        protected virtual void ExecuteProblem()
         {
             throw new NotImplementedException();
         }

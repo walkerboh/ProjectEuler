@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEuler.Problems
 {
-    class Problem30 : BaseProblem
+    internal class Problem30 : BaseProblem
     {
 
         protected override void ExecuteProblem()
