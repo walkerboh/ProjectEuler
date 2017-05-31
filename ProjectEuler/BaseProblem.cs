@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace ProjectEuler
 {
-    internal class BaseProblem
+    internal abstract class BaseProblem
     {
         public TimeSpan Run()
         {
