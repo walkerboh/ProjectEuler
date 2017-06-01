@@ -188,5 +188,37 @@ namespace ProjectEuler
         {
             return IsWholeNumber((Math.Sqrt((8 * n) + 1) + 1) / 4);
         }
+
+        public static Dictionary<int, int> Factorization(int n)
+        {
+            Dictionary<int, int> primeFactors = new Dictionary<int, int>();
+
+            if (IsPrime(n))
+            {
+                primeFactors.Add(n, 1);
+            }
+            else
+            {
+                List<int> primes = ESieve(n / 2).ToList();
+
+                while (n != 1 && primes.Any())
+                {
+                    int prime = primes[0];
+                    primes.RemoveAt(0);
+
+                    while (n % prime == 0)
+                    {
+                        n /= prime;
+
+                        if (!primeFactors.ContainsKey(prime))
+                            primeFactors[prime] = 0;
+
+                        primeFactors[prime] += 1;
+                    }
+                }
+            }
+
+            return primeFactors;
+        }
     }
 }
