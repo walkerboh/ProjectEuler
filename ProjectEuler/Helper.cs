@@ -220,5 +220,20 @@ namespace ProjectEuler
 
             return primeFactors;
         }
+
+        public static bool IsPermutation(string a, string b)
+        {
+            if (a.Length != b.Length)
+                return false;
+
+            List<char> charA = a.ToCharArray().OrderBy(i => i).ToList(), charB = b.ToCharArray().OrderBy(i => i).ToList();
+
+            bool perm = true;
+
+            for (int i = 0; i < charA.Count(); i++)
+                perm = perm && charA[i].Equals(charB[i]);
+
+            return perm;
+        }
     }
 }
