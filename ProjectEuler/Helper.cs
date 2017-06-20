@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Reflection;
 
 namespace ProjectEuler
@@ -49,7 +50,8 @@ namespace ProjectEuler
             return b == 0 ? a : GCD(b, a % b);
         }
 
-        public static int Factorial(int a)
+        // As of 53 - Now BigInteger because factorials get very large.... very fast....
+        public static BigInteger Factorial(int a)
         {
             if (a <= 1)
                 return 1;
@@ -58,7 +60,7 @@ namespace ProjectEuler
         }
 
         // Because why not
-        public static int Fac(this int a)
+        public static BigInteger Fac(this int a)
         {
             return Factorial(a);
         }

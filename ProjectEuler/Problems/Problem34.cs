@@ -11,13 +11,13 @@ namespace ProjectEuler.Problems
             int result = 0;
 
             // Precalculate the factorials since we will only ever need 9 of them;
-            int[] facts = new int[10];
+            long[] facts = new long[10];
             for (int i = 0; i < 10; i++)
-                facts[i] = i.Fac();
+                facts[i] = (long)i.Fac();
 
             for (int i = 3; i < 2540161; i++)
             {
-                int sumOfFacts = 0;
+                long sumOfFacts = 0;
                 int num = i;
 
                 // Use this trick to just pull of digits
